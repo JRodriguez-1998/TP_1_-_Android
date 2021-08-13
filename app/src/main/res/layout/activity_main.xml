@@ -29,6 +29,7 @@
         android:layout_marginTop="28dp"
         android:width="250sp"
         android:backgroundTint="#FFDCDADA"
+        android:onClick="ejercicio2"
         android:text="@string/btnEj2"
         android:textColor="@color/black"
         android:textSize="16sp"

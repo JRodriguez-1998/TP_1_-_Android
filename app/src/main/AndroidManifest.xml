@@ -10,8 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TPNº1Android">
         <activity
-            android:name=".ejercicio1"
+            android:name=".ejercicio2"
             android:exported="true" />
+        <activity
+            android:name=".ejercicio1"
+            android:exported="true"
+            android:label="Suma"
+            />
         <activity
             android:name=".MainActivity"
             android:exported="true">

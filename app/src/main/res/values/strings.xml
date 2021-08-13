@@ -9,5 +9,7 @@
     <string name="tvMau">Molina, Mauricio</string>
     <string name="tvJose">Rodriguez, Jose</string>
     <string name="tvMarcos">Vera, Marcos</string>
+    <string name="tvSegundoNum">Segundo número:</string>
+    <string name="btnCalcular">CALCULAR</string>
 
 </resources>

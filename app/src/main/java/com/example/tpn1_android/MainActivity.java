@@ -18,4 +18,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, ejercicio1.class);
         startActivity(i);
     }
+
+    public void ejercicio2(View view){
+        Intent i = new Intent(this, ejercicio2.class);
+        startActivity(i);
+    }
 }
