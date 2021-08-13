@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name">TP Nº1 - Android</string>
-    <string name="holis">Hola Perris</string>
+    <string name="app_name">TP N°1</string>
+    <string name="btnEj1">EJERCICIO 1</string>
+    <string name="btnEj2">EJERCICIO 2</string>
+    <string name="tvPrimerNum">Primer número:</string>
+    <string name="btnLimpiar">Borrar</string>
+    <string name="tvIntegrantes">Integrantes:</string>
+    <string name="tvJuan">Gonzalez, Juan</string>
+    <string name="tvMau">Molina, Mauricio</string>
+    <string name="tvJose">Rodriguez, Jose</string>
+    <string name="tvMarcos">Vera, Marcos</string>
+
 </resources>
