@@ -1,5 +1,6 @@
 package com.example.tpn1_android;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -14,5 +15,9 @@ public class ejercicio1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejercicio1);
         numero1 = findViewById(R.id.txtPrimerNumero);
+
+        //Boton ← del ActionBar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 }

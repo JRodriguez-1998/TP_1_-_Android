@@ -11,11 +11,14 @@
         android:theme="@style/Theme.TPNº1Android">
         <activity
             android:name=".ejercicio2"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Calculadora"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".ejercicio1"
             android:exported="true"
             android:label="Suma"
+            android:parentActivityName=".MainActivity"
             />
         <activity
             android:name=".MainActivity"
