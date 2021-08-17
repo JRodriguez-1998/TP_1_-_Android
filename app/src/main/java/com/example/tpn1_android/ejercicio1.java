@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ejercicio1 extends AppCompatActivity {
 
@@ -29,10 +30,14 @@ public class ejercicio1 extends AppCompatActivity {
     }
 
     public void calcular(View view) {
-        Integer num1 = Integer.parseInt(numero1.getText().toString());
-        Integer num2 = Integer.parseInt(numero2.getText().toString());
+        if(numero1.getText().toString().isEmpty() || numero2.getText().toString().isEmpty())
+            Toast.makeText(ejercicio1.this, "Debe ingresar ambos numeros", Toast.LENGTH_SHORT).show();
+        else {
+            Integer num1 = Integer.parseInt(numero1.getText().toString());
+            Integer num2 = Integer.parseInt(numero2.getText().toString());
 
-        String res = String.valueOf(num1 + num2);
-        resultado.setText(res);
+            String res = String.valueOf(num1 + num2);
+            resultado.setText(res);
+        }
     }
 }
