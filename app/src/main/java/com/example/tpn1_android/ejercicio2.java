@@ -153,5 +153,44 @@ public class ejercicio2 extends AppCompatActivity {
                     Toast.makeText(ejercicio2.this,"Error debe ingresar previamente un número",Toast.LENGTH_LONG).show();
             }
         });
+
+        btnLimpiar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                txtProceso.setText("");
+                numero2=0;
+                numero1=0;
+            }
+        });
+
+
+        btnIgual.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                //Verifica que se hayan ingresado los numeros
+                if(!txtProceso.getText().toString().isEmpty()){
+                    txtConcatenar = (TextView) findViewById(R.id.txtResultado);
+                    numero2=Integer.parseInt(txtConcatenar.getText().toString());
+                    //En caso de que no se ingrese un segundo numero y se presione el boton igual"
+                if(operador==null){
+                    Toast.makeText(ejercicio2.this,"Falta segundo numero",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                //En caso de que sea suma
+                if(operador.equals("+")){
+                txtProceso.setText("");
+                resultado=numero1+numero2;
+                }
+                //En caso de que sea resta
+                if(operador.equals("-")){
+                    txtProceso.setText("");
+                    resultado=numero1-numero2;
+                }
+                    txtProceso.setText(String.valueOf(resultado));
+                }
+                }
+                    else Toast.makeText(ejercicio2.this,"Error debe ingresar previamente un número",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
