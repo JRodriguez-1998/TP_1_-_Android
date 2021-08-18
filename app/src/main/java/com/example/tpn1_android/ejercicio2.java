@@ -186,10 +186,52 @@ public class ejercicio2 extends AppCompatActivity {
                     txtProceso.setText("");
                     resultado=numero1-numero2;
                 }
+                //En caso de que sea multiplicacion
+                if(operador.equals("*")){
+                    txtProceso.setText("");
+                    resultado=numero1*numero2;
+                }
+                //En caso de que sea division
+                if(operador.equals("/")){
+                    txtProceso.setText("");
+                    if(numero2 != 0){
+                        resultado = numero1/numero2;
+                    }else {
+                        txtProceso.setText("Infinito");
+                    }
+                }
                     txtProceso.setText(String.valueOf(resultado));
                 }
                 }
                     else Toast.makeText(ejercicio2.this,"Error debe ingresar previamente un número",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnMultiplicar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtProceso.getText().toString().isEmpty()){
+                    operador = "*";
+                    txtConcatenar =  (TextView) findViewById(R.id.txtResultado);
+                    numero1 = Integer.parseInt(txtConcatenar.getText().toString());
+                    txtProceso.setText("");
+                }
+                else
+                    Toast.makeText(ejercicio2.this,"Error debe ingresar previamente un número",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        btnDividir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtProceso.getText().toString().isEmpty()){
+                    operador = "/";
+                    txtConcatenar =  (TextView) findViewById(R.id.txtResultado);
+                    numero1 = Integer.parseInt(txtConcatenar.getText().toString());
+                    txtProceso.setText("");
+                }
+                else
+                    Toast.makeText(ejercicio2.this,"Error debe ingresar previamente un número",Toast.LENGTH_LONG).show();
             }
         });
     }

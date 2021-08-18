@@ -40,4 +40,11 @@ public class ejercicio1 extends AppCompatActivity {
             resultado.setText(res);
         }
     }
+
+    //Limpiar los EditText
+    public void Limpiar(View view){
+        numero1.setText("");
+        numero2.setText("");
+        resultado.setText("");
+    }
 }
