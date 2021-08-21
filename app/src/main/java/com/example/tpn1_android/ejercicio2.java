@@ -10,12 +10,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class ejercicio2 extends AppCompatActivity {
 
     Button btnCero, btnUno, btnDos, btnTres, btnCuatro, btnCinco, btnSeis, btnSiete, btnOcho, btnNueve,
             btnIgual, btnSuma, btnResta, btnMultiplicar, btnDividir, btnLimpiar;
     TextView txtProceso, txtConcatenar;
-    int numero1, numero2, resultado;
+    Double numero1, numero2, resultado;
     String operador;
 
     @Override
@@ -132,7 +134,7 @@ public class ejercicio2 extends AppCompatActivity {
                 if(!txtProceso.getText().toString().isEmpty()){
                     operador = "+";
                     txtConcatenar = (TextView) findViewById(R.id.txtResultado);
-                    numero1 = Integer.parseInt(txtConcatenar.getText().toString());
+                    numero1 = Double.parseDouble(txtConcatenar.getText().toString());
                     txtProceso.setText("");
                 }
                 else
@@ -146,7 +148,7 @@ public class ejercicio2 extends AppCompatActivity {
                 if(!txtProceso.getText().toString().isEmpty()){
                     operador = "-";
                     txtConcatenar =  (TextView) findViewById(R.id.txtResultado);
-                    numero1 = Integer.parseInt(txtConcatenar.getText().toString());
+                    numero1 = Double.parseDouble(txtConcatenar.getText().toString());
                     txtProceso.setText("");
                 }
                 else
@@ -158,8 +160,8 @@ public class ejercicio2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 txtProceso.setText("");
-                numero2=0;
-                numero1=0;
+                numero2 = 0.0;
+                numero1 = 0.0;
             }
         });
 
@@ -170,40 +172,45 @@ public class ejercicio2 extends AppCompatActivity {
                 //Verifica que se hayan ingresado los numeros
                 if(!txtProceso.getText().toString().isEmpty()){
                     txtConcatenar = (TextView) findViewById(R.id.txtResultado);
-                    numero2=Integer.parseInt(txtConcatenar.getText().toString());
+                    numero2 = Double.parseDouble(txtConcatenar.getText().toString());
                     //En caso de que no se ingrese un segundo numero y se presione el boton igual"
-                if(operador==null){
-                    Toast.makeText(ejercicio2.this,"Falta segundo numero",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                //En caso de que sea suma
-                if(operador.equals("+")){
-                txtProceso.setText("");
-                resultado=numero1+numero2;
-                }
-                //En caso de que sea resta
-                if(operador.equals("-")){
-                    txtProceso.setText("");
-                    resultado=numero1-numero2;
-                }
-                //En caso de que sea multiplicacion
-                if(operador.equals("*")){
-                    txtProceso.setText("");
-                    resultado=numero1*numero2;
-                }
-                //En caso de que sea division
-                if(operador.equals("/")){
-                    txtProceso.setText("");
-                    if(numero2 != 0){
-                        resultado = numero1/numero2;
-                    }else {
-                        txtProceso.setText("Infinito");
+                    if(operador==null){
+                        Toast.makeText(ejercicio2.this,"Falta segundo numero",Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        //En caso de que sea suma
+                        if(operador.equals("+")){
+                        txtProceso.setText("");
+                        resultado=numero1+numero2;
+                        }
+                        //En caso de que sea resta
+                        if(operador.equals("-")){
+                            txtProceso.setText("");
+                            resultado=numero1-numero2;
+                        }
+                        //En caso de que sea multiplicacion
+                        if(operador.equals("*")){
+                            txtProceso.setText("");
+                            resultado=numero1*numero2;
+                        }
+                        //En caso de que sea division
+                        if(operador.equals("/")){
+                            txtProceso.setText("");
+                            if(numero2 != 0){
+                                resultado = numero1/numero2;
+                            }else {
+                                txtProceso.setText("Infinito");
+                            }
+                        }
+
+                        // Si tiene decimales, muestro hasta 7, si no ninguno.
+                        String resultadoStr = new DecimalFormat("#.#######").format(resultado);
+
+                        txtProceso.setText(resultadoStr);
                     }
                 }
-                    txtProceso.setText(String.valueOf(resultado));
-                }
-                }
-                    else Toast.makeText(ejercicio2.this,"Error debe ingresar previamente un número",Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(ejercicio2.this,"Error debe ingresar previamente un número",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -213,7 +220,7 @@ public class ejercicio2 extends AppCompatActivity {
                 if(!txtProceso.getText().toString().isEmpty()){
                     operador = "*";
                     txtConcatenar =  (TextView) findViewById(R.id.txtResultado);
-                    numero1 = Integer.parseInt(txtConcatenar.getText().toString());
+                    numero1 = Double.parseDouble(txtConcatenar.getText().toString());
                     txtProceso.setText("");
                 }
                 else
@@ -227,7 +234,7 @@ public class ejercicio2 extends AppCompatActivity {
                 if(!txtProceso.getText().toString().isEmpty()){
                     operador = "/";
                     txtConcatenar =  (TextView) findViewById(R.id.txtResultado);
-                    numero1 = Integer.parseInt(txtConcatenar.getText().toString());
+                    numero1 = Double.parseDouble(txtConcatenar.getText().toString());
                     txtProceso.setText("");
                 }
                 else
